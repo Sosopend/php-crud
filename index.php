@@ -1,17 +1,18 @@
-<?php
-    require_once("dbconnect.php");
-?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Base de données users</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+<?php
+    require_once("./dbconnect.php");
+?>
     <div class="lecture_f">
-    <h2>Lecture de la BDD des users</h2>
+    <h2>Liste des utilisateurs</h2>
     <?php 
         $requete = "SELECT * FROM users"; 
         $exec = $conn->query($requete);
@@ -20,13 +21,13 @@
         <hr>
     <?php foreach($result as $key => $value): ?>
         <div class="user">
-        <p><?php echo $value["lastname"] . " " . $value["firstname"]; ?></p>
+        <h2><?php echo $value["lastname"] . " " . $value["firstname"]; ?></h2>
         <ul>
         <li><?php echo "email    : " . $value["email"]; ?></li>
         <li><?php echo "password : " . $value["password"]; ?></li>
         <form action="./supprimer.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $value["id"] ?>">
-                <input type="submit" value="Supprimer l'utilisateur">
+                <input type="submit" class="del_user" value="Supprimer l'utilisateur">
             </form>
         </ul>
         </div>
@@ -34,8 +35,9 @@
     endforeach; 
     ?>
     </div>
+    <hr>
     <div class="ajout_f">
-    <form action="./ajout.php" method="post">
+    <form action="./ajout.php" method="POST">
         <h2>Ajouter un utilisateur</h2>
         <div class="form-group">
         <input type="text" name="nom_user"  placeholder="Nom">
