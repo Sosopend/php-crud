@@ -19,6 +19,7 @@
         ?>
         <hr>
     <?php foreach($result as $key => $value): ?>
+        <div class="user">
         <p><?php echo $value["lastname"] . " " . $value["firstname"]; ?></p>
         <ul>
         <li><?php echo "email    : " . $value["email"]; ?></li>
@@ -28,7 +29,7 @@
                 <input type="submit" value="Supprimer l'utilisateur">
             </form>
         </ul>
-        <hr>
+        </div>
     <?php 
     endforeach; 
     ?>
@@ -39,8 +40,6 @@
         <div class="form-group">
         <input type="text" name="nom_user"  placeholder="Nom">
         <input type="text" name="prenom_user"  placeholder="Prénom">
-        </div>
-        <div class="form-group">
         <input type="email" name="email_user" placeholder="Email">
         <input type="password" name="password_user"  placeholder="Mot de passe">
         </div>
