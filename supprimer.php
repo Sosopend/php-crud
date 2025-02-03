@@ -10,7 +10,7 @@
     
 <?php 
     // Inclure le script de connexion à la DB
-    require_once("./dbconnect.php");
+    require_once("../dbconnect.php");
 
     $userId = $_POST["id"];
     // Teste si la connexion avec PDO fonctionne :
