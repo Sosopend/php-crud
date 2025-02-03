@@ -1,6 +1,4 @@
-<?php
-    require_once("dbconnect.php");
-?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -10,6 +8,9 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+<?php
+    require_once("./dbconnect.php");
+?>
     <div class="lecture_f">
     <h2>Liste des utilisateurs</h2>
     <?php 
