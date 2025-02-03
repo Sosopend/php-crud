@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
 <?php
     require_once("dbconnect.php");
 
@@ -13,17 +25,23 @@ if($conn): ?>
     <h1>Connection à la BDD réussie</h1>
 
     <?php // Requete d'ajout d'un produit
-    $requete = "INSERT INTO users (firstname, lastname, email, password) VALUES ('$nom', '$prenom', '$email', '$password')";
-    // executer et stocker  la requête
-    $exec = $conn->query($requete);
-    if($exec): ?>
-        <h2>Utilisateur ajouté avec succès</h2>
-    <?php else: ?>
-        <h2>Erreur lors de l'ajout de l'utilisateur</h2>
-        window.location.replace("http://cours-php.test/connex-bdd/");
+    if(!empty($_POST["nom_user"]) && !empty($_POST["prenom_user"]) && !empty($_POST["email_user"]) && !empty($_POST["password_user"])): 
+        if($exec) 
+                $requete = "INSERT INTO users (firstname, lastname, email, password) VALUES ('$nom', '$prenom', '$email', '$password')";
+                // executer et stocker  la requête
+                $exec = $conn->query($requete);?>
 
-    <?php endif; ?>
+            <h2>Utilisateur ajouté avec succès</h2>
+            <?php header("Refresh: 5; URL=http://cours-php.test/connex-bdd/users/php-crud/index.php"); 
+            exit; ?>
+        <?php else: ?>
+            <h2>Erreur lors de l'ajout de l'utilisateur</h2>
+            <?php header("Refresh: 5; URL=http://cours-php.test/connex-bdd/users/php-crud/index.php"); 
+            exit; ?>
+        <?php endif; ?>
+        <?php else: header("Refresh: 5; URL=http://cours-php.test/connex-bdd/users/php-crud/index.php");
+            ?>
+            <?php endif; ?>
 
-<?php else: ?>
-    <h1>Connection à la BDD échouée</h1>
-<?php endif; ?>
+</body>
+</html>
