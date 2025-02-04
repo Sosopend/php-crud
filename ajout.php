@@ -34,14 +34,14 @@
             if ($exec): ?>
 
                 <h2>Utilisateur ajouté avec succès</h2>
-                <?php header("Refresh: 5; URL=http://cours-php.test/connex-db/users/php-crud/");
+                <?php header("Refresh: 5; URL=http://cours-php.test/connex-bdd/users/php-crud/");
                 exit; ?>
             <?php else: ?>
                 <h2>Erreur lors de l'ajout de l'utilisateur</h2>
-                <?php header("Refresh: 5; URL=http://cours-php.test/connex-db/users/php-crud/");
+                <?php header("Refresh: 5; URL=http://cours-php.test/connex-bdd/users/php-crud/");
                 exit; ?>
             <?php endif; ?>
-        <?php else: header("Refresh: 5; URL=http://cours-php.test/connex-db/users/php-crud/");
+        <?php else: header("Refresh: 5; URL=http://cours-php.test/connex-bdd/users/php-crud/");
         endif; ?>
     <?php endif; ?>
 

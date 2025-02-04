@@ -27,7 +27,7 @@
         //var_dump($requete);
 
         $exec = $conn->query($requete);
-        header("Refresh: 5; URL=http://cours-php.test/connex-db/users/php-crud/");
+        header("Refresh: 5; URL=http://cours-php.test/connex-bdd/users/php-crud/");
     endif;
     ?>
 </body>

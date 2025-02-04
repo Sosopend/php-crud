@@ -22,12 +22,12 @@
         if($exec):
         ?>
             <h1>Suppression effectuée</h1>
-            <?php header("Refresh: 5; URL=http://cours-php.test/connex-db/users/php-crud/"); 
+            <?php header("Refresh: 5; URL=http://cours-php.test/connex-bdd/users/php-crud/"); 
         exit; ?>
         <?php 
         elseif(!$exec):?>
             <h1>Erreur lors de la suppression</h1>
-            <?php header("Refresh: 5; URL=http://cours-php.test/connex-db/users/php-crud/");
+            <?php header("Refresh: 5; URL=http://cours-php.test/connex-bdd/users/php-crud/");
             exit; ?>
         <?php endif; ?>
     
