@@ -20,6 +20,7 @@ h1, h2{
 }
 
 .user{
+    width: 45%;
     margin: 10px;
     padding: 10px;
     border: 1px solid black;
@@ -28,35 +29,29 @@ h1, h2{
 }
 
 .ajout_f{
-    width: 90%;
+    width: 35%;
     margin: 10px;
     padding: 20px;
     border: 1px solid black;
     border-radius: 10px;
     display: inline-block;
-}
-form{
-    margin: auto;
+    margin-left: 50px;
 }
 
 input{
-    width: 90%;
-    padding: 15px;
+    padding: 5px;
     display: flex;
     flex-direction: column;
     margin: 10px;
     gap: 10px;
     border-radius: 10px;
-    
-}
-.ajout_f{
-    width: 50%;
+    width: 90%;
 }
 
+
 input[type="submit"]{
-    width: 100%;
     text-align: center;
-    
+    background-color: rgb(154, 154, 132);
 }
 
 input[type="submit"]:hover{
@@ -66,7 +61,7 @@ input[type="submit"]:hover{
 
 .div_form{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center; 
 }

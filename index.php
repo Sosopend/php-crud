@@ -25,8 +25,8 @@
         <div class="user">
         <h2><?php echo $value["lastname"] . " " . $value["firstname"]; ?></h2>
         <ul>
-        <li><?php echo "email    : " . $value["email"]; ?></li>
-        <li><?php echo "password : " . $value["password"]; ?></li>
+        <li><?php echo "<strong>Email    :</strong> " . $value["email"]; ?></li>
+        <li><?php echo "<strong>Password :</strong> " . $value["password"]; ?></li>
         </ul>
         <div class="div_form">
         <form action="./supprimer.php" method="POST">
