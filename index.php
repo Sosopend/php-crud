@@ -15,6 +15,7 @@
 ?>
     <div class="lecture_f">
     <h2>Liste des utilisateurs</h2>
+    <div class="regroup_user">
     <?php 
         $requete = "SELECT * FROM users"; 
         $exec = $conn->query($requete);
@@ -22,20 +23,28 @@
         ?>
         <hr>
     <?php foreach($result as $key => $value): ?>
+        <?php //var_dump($result)?>
         <div class="user">
         <h2><?php echo $value["lastname"] . " " . $value["firstname"]; ?></h2>
         <ul>
-        <li><?php echo "email    : " . $value["email"]; ?></li>
-        <li><?php echo "password : " . $value["password"]; ?></li>
+        <li><?php echo "<strong>Email    :</strong> " . $value["email"]; ?></li>
+        <li><?php echo "<strong>Password :</strong> " . $value["password"]; ?></li>
+        </ul>
+        <div class="div_form">
         <form action="./supprimer.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $value["id"] ?>">
                 <input type="submit" class="del_user" value="Supprimer l'utilisateur">
-            </form>
-        </ul>
+        </form>
+        <form action="./form-modifier.php" method="POST">
+                <input type="hidden" name="id" value="<?php echo $value["id"]?>">
+                <input type="submit" value="Modifier l'utilisateur">
+        </form>
+        </div>
         </div>
     <?php 
     endforeach; 
     ?>
+    </div>
     </div>
     <hr>
     <div class="ajout_f">
