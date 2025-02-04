@@ -36,7 +36,7 @@ h1, h2{
     display: inline-block;
 }
 form{
-    padding: 20px;
+    margin: auto;
 }
 
 input{
@@ -62,4 +62,16 @@ input[type="submit"]{
 input[type="submit"]:hover{
     background-color: rgb(62, 61, 61);
     color: rgb(249, 248, 247);
+}
+
+.div_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+.regroup_user{
+    display: block;
+    width: 900px;
+    margin: auto;
 }
